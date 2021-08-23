@@ -46,6 +46,35 @@ export default {
     '@nuxtjs/axios',
     '@nuxtjs/auth-next'
   ],
+  router:{
+    middleware:['auth']
+  },
+  auth:{
+    plugins: [ '~/plugins/api.js' ],
+    strategies: {
+      'laravelJWT': {
+        provider: 'laravel/jwt',
+        url: 'http://localhost:8000',
+        token: {
+          property: 'access_token',
+          maxAge: 60 * 60
+        },
+        refreshToken: {
+          maxAge: 20160 * 60
+        }
+      },
+    },
+    redirect:{
+      login: '/auth/login',
+      logout:'/',
+      home:'/'
+    },
+    cookie: {
+      options: {
+        sameSite: 'lax'
+      },
+    },
+  },
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {},
