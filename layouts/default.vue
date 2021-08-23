@@ -1,8 +1,7 @@
 <template>
   <div>
-<!--    <HeaderMain v-if=" ! $auth.loggedIn"/>-->
-<!--    <HeaderMainAuthed v-if="$auth.loggedIn" />-->
+    <HeaderMainAuthed v-if="$auth.loggedIn"/>
+    <HeaderMain v-else/>
     <Nuxt />
-<!--    <FooterMain />-->
   </div>
 </template>
