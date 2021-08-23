@@ -29,12 +29,14 @@ export default {
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
+    {src: '~/plugins/Vuelidate'}
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: [
     '~/components',
-    { path: '~/components/header/', prefix: 'header' }
+    { path: '~/components/form/', prefix: 'form' },
+    { path: '~/components/header/', prefix: 'header' },
   ],
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
@@ -49,6 +51,7 @@ export default {
   router:{
     middleware:['auth']
   },
+
   auth:{
     plugins: [ '~/plugins/api.js' ],
     strategies: {
