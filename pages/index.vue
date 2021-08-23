@@ -18,11 +18,11 @@
     </div>
     <div class="container text-dark rounded bg-light">
       <div class="row top mb-3">
-        <div class="col-11 mt-3 h4">
+        <div class="col-11 mt-3 h3">
           Popular cities
         </div>
         <div class="col-1 mt-3">
-          <nuxt-link class="text-dark" :to="'/cities'">
+          <nuxt-link class="btn btn-outline-dark" :to="'/cities'">
             show all
           </nuxt-link>
         </div>
