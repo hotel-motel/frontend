@@ -4,7 +4,8 @@
 
 <script>
 export default {
-  auth:'guest'
+  auth:'guest',
+  layout:'empty'
 }
 </script>
 

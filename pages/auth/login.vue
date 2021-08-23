@@ -28,12 +28,12 @@
         </button>
         <div class="row">
           <div class="col text-end">
-            <NuxtLink class="text-light" to="/auth/register">
+            <NuxtLink class="btn btn-outline-light" to="/auth/register">
               register
             </NuxtLink>
           </div>
           <div class="col text-start">
-            <NuxtLink class="text-light" to="/auth/reset-password">
+            <NuxtLink class="btn btn-outline-light" to="/auth/reset-password">
               Reset password
             </NuxtLink>
           </div>
