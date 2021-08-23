@@ -7,7 +7,7 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'hotel-reservation-frontend',
+    title: 'hotel-motel',
     htmlAttrs: {
       lang: 'en'
     },
