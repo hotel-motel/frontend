@@ -14,7 +14,7 @@
         </ul>
         <div class="text-end">
           <NuxtLink to="/auth/login" type="button" class="btn btn-outline-light me-2">Login</NuxtLink>
-          <NuxtLink to="/auth/register" type="button" class="btn btn-warning">Sign-up</NuxtLink>
+          <NuxtLink to="/auth/register" type="button" class="btn btn-warning">Register</NuxtLink>
         </div>
       </div>
     </div>
