@@ -10,6 +10,7 @@
 
 <script>
 export default {
+  auth:false,
   props:['city_name'],
   data(){
     return{
