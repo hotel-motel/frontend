@@ -37,6 +37,7 @@ export default {
     '~/components',
     { path: '~/components/form/', prefix: 'form' },
     { path: '~/components/header/', prefix: 'header' },
+    { path: '~/components/auth/register', prefix: 'register' },
   ],
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
