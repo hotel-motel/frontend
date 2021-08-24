@@ -74,7 +74,7 @@ export default {
     submitForm(){
       if (this.form.validated(this.$v)){
         this.form.submit(this.$api, 'auth/register')
-          .then(data=>alert('registerd'));
+          .then(data=>this.$emit('registered'));
       }else{
         this.form.parseError({
           'name':{
