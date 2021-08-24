@@ -28,12 +28,12 @@
     <input type="submit" name="send" class="btn btn-warning" :disabled="form.errors.any()" value="Register" />
     <div class="row">
       <div class="col text-end">
-        <NuxtLink class="text-light" to="/auth/login">
+        <NuxtLink  class="btn btn-outline-light" to="/auth/login">
           login
         </NuxtLink>
       </div>
       <div class="col text-start">
-        <NuxtLink class="text-light" to="/auth/reset-password">
+        <NuxtLink class="btn btn-outline-light" to="/auth/reset-password">
           reset password
         </NuxtLink>
       </div>
