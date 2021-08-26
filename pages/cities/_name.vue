@@ -21,7 +21,9 @@ export default {
     }
   },
   mounted() {
-    this.sendRequest(1)
+    this.$nextTick(()=>{
+      this.sendRequest(1)
+    })
   },
   methods:{
     loadData(response, page){
