@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="text-light">
     <div class="py-12" v-if="error!=null">
       <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
         <div class="alert alert-danger">
@@ -14,7 +14,7 @@
             <i class='bx bxs-calendar'></i>
             Choose your trip times :
           </span>
-          <div class="bg-secondary overflow-hidden shadow-sm rounded text-light">
+          <div class="bg-secondary overflow-hidden shadow-sm rounded">
             <div class="p-6 bg-secondary border-b">
               <div class="d-flex justify-content-center m-3" v-if="is_loading">
                 <div class="spinner-border" role="status"></div>
