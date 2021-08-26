@@ -74,13 +74,13 @@
                   </span>
                 </td>
                 <td>
-                  <form method="get" :action="'/rooms/'+room.id">
-                    <input type="hidden" name="start" :value="start">
-                    <input type="hidden" name="end" :value="end">
-                    <input type="submit" class="btn btn-danger" value="Reserved" v-if="reserved.includes(room.id)"
-                           disabled>
-                    <input type="submit" class="btn btn-primary" value="Reserve" v-else>
-                  </form>
+                  <button class="btn btn-danger" v-if="reserved.includes(room.id)"
+                          disabled>
+                    Reserved
+                  </button>
+                  <nuxt-link class="btn btn-primary" :to="'/rooms/'+room.id+'/reserve/from/'+start+'/to/'+end" v-else>
+                    Reserve
+                  </nuxt-link>
                 </td>
               </tr>
             </tbody>
