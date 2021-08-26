@@ -62,7 +62,7 @@
           </div>
         </div>
       </div>
-      <passengers-form :capacity="room.max_capacity" :room_id="room.id"></passengers-form>
+      <passengers-form class="mb-3" :capacity="room.max_capacity" :room_id="room.id"></passengers-form>
     </div>
   </div>
 </template>

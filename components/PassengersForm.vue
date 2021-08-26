@@ -77,7 +77,7 @@
               </div>
             </div>
             <div class="py-1">
-              <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 grid gap-2" v-show="passengers.length>0">
+              <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 d-grid gap-2" v-show="passengers.length>0">
                 <Button class="btn btn-success" @click="checkForm()"  :disabled="is_loading">
                   Continue
                 </Button>
