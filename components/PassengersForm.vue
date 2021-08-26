@@ -122,7 +122,7 @@ export default{
         start:this.$route.params.start,
         end:this.$route.params.end
       })
-        .then(response=> {window.location.href='/trips/'+response.data+'/pay'})
+        .then(response=> {window.location.href='http://127.0.0.1:8000/trips/'+response.data+'/pay'})
         .catch(error=> {
           this.errors = error.response.data.errors
           this.is_loading=false
