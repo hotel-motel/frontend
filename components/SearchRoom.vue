@@ -78,7 +78,7 @@
                           disabled>
                     Reserved
                   </button>
-                  <nuxt-link class="btn btn-primary" :to="'/rooms/'+room.id+'/reserve/from/'+start+'/to/'+end" v-else>
+                  <nuxt-link class="btn btn-primary" :to="'/rooms/'+room.id+'/reserve/start/'+start+'/end/'+end" v-else>
                     Reserve
                   </nuxt-link>
                 </td>
