@@ -21,7 +21,7 @@ export default {
   mounted() {
     this.$nextTick(()=>{
       this.$api.get('/trips/'+this.$route.params.id)
-      .then(response=>this.trip=response.data)
+        .then(response=>this.trip=response.data)
     })
   }
 }
