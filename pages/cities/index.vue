@@ -1,5 +1,5 @@
 <template>
-  <div class="grid gap-3 container">
+  <div class="d-grid gap-3 container">
     <span class="h3 text-light">
       Cities
     </span>

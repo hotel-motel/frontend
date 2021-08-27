@@ -1,6 +1,9 @@
 <template>
-  <div class="container">
-    <div class="row">
+  <div class="d-grid gap-3 container">
+    <span class="h3 text-light">
+      Hotels
+    </span>
+    <div class="row justify-around">
       <div class="col-3 text-light" v-for="hotel in hotels">
         <Hotel :hotel="hotel"></Hotel>
       </div>
