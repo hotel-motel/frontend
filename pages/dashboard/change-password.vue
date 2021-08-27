@@ -8,32 +8,22 @@
         <span>
           Old password :
         </span>
-        <input type="password" class="form-control" v-model="old_password" @change="show_errors=false">
-        <div v-if="show_errors">
-          <div class="alert alert-danger" v-if="!$v.old_password.required">Old password field is required</div>
-          <div class="alert alert-danger" v-if="!$v.old_password.minLength">Old password should be at least 6 digit</div>
-        </div>
+        <input type="password" class="form-control" v-model="form.old_password">
+        <FormErrorMessage :form="form" :name="'old_password'" v-if="form.errors.has('old_password')" />
       </div>
       <div class="d-grid gap-2">
         <span>
           New password :
         </span>
-        <input type="password" class="form-control" v-model="new_password" @change="show_errors=false">
-        <div v-if="show_errors">
-          <div class="alert alert-danger" v-if="!$v.new_password.required">New password field is required</div>
-          <div class="alert alert-danger" v-if="!$v.new_password.minLength">New password should be at least 6 digit</div>
-          <div class="alert alert-danger" v-if="!$v.new_password.not">New password should not be same as old password</div>
-        </div>
+        <input type="password" class="form-control" v-model="form.new_password">
+        <FormErrorMessage :form="form" :name="'new_password'" v-if="form.errors.has('new_password')" />
       </div>
       <div class="d-grid gap-2">
         <span>
           New password again :
         </span>
-        <input type="password" class="form-control" v-model="new_password_confirm"  @change="show_errors=false">
-        <div v-if="show_errors">
-          <div class="alert alert-danger" v-if="!$v.new_password_confirm.required">New password confirmation field is required</div>
-          <div class="alert alert-danger" v-if="!$v.new_password_confirm.minLength">New password confirmation should be at least 6 digit</div>
-        </div>
+        <input type="password" class="form-control" v-model="form.new_password_confirm">
+        <FormErrorMessage :form="form" :name="'new_password_confirm'" v-if="form.errors.has('new_password_confirm')" />
       </div>
       <div>
         <button class="btn btn-primary" @click="changePassword()">
@@ -55,52 +45,62 @@
 
 <script>
 //TODO: Show server error
+import Form from '~/helpers/form/form.js';
 import {required, minLength, sameAs, not} from 'vuelidate/lib/validators'
 export default {
   layout:'dashboard',
   data(){
     return {
-      changed:false,
-      old_password:'',
-      new_password:'',
-      is_loading:false,
-      show_errors:false,
-      new_password_confirm:'',
+      form:new Form({
+        old_password:'',
+        new_password:'',
+        new_password_confirm:''
+      }),
+      changed:false
     }
   },
   methods:{
     changePassword(){
-      this.show_errors=true
-      this.$v.$touch()
-      if (this.$v.$invalid){
-        return
-      }
-      this.is_loading=true
-      //TODO: check if old password is wrong show error
-      this.$api.post('/change/password', {
-        old_password:this.old_password,
-        new_password:this.new_password,
-      })
+      if (this.form.validated(this.$v)){
+        this.form.submit(this.$api, 'change/password')
         .then(response=>this.changed=true)
-        .finally(()=>{ this.is_loading=false })
+      }else{
+        this.form.parseError({
+          'old_password':{
+            'required':'Enter old password.',
+            'minLength':'Old password should be at least 6 character.'
+          },
+          'new_password':{
+            'required':'Enter new password.',
+            'minLength':'New password should be at least 6 character.',
+            'not':'New password should not be your current password.'
+          },
+          'new_password_confirm':{
+            'required':'Enter new password confirmation.',
+            'minLength':'New password confirmation should be at least 6 character.',
+            'sameAsNewPassword':'New password confirmation should be same as new password.'
+          }
+        }, this.$v);
+      }
     }
   },
   validations:{
-    old_password:{
-      required,
-      minLength:minLength(6)
-    },
-    new_password:{
-      required,
-      minLength:minLength(6),
-      not:not(sameAs('old_password'))
-    },
-    new_password_confirm:{
-      required,
-      minLength:minLength(6),
-      sameAsNewPassword:sameAs('new_password')
+    form:{
+      old_password:{
+        required,
+        minLength:minLength(6)
+      },
+      new_password:{
+        required,
+        minLength:minLength(6),
+        not:not(sameAs('old_password'))
+      },
+      new_password_confirm:{
+        required,
+        minLength:minLength(6),
+        sameAsNewPassword:sameAs('new_password')
+      }
     }
-
   }
 }
 </script>

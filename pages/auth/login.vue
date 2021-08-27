@@ -44,7 +44,6 @@
 </template>
 
 <script>
-//TODO: show invalid password error
 import Form from '~/helpers/form/form.js';
 import { required, numeric, minLength, maxLength, email } from 'vuelidate/lib/validators';
 export default {
