@@ -1,5 +1,5 @@
 <template>
-  <div class="grid gap-2">
+  <div class="d-grid gap-2">
     <span class="h4">
         <div class="badge badge-primary">
             Passengers list
