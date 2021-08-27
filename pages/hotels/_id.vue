@@ -1,7 +1,7 @@
 <template>
   <div>
     <div v-if="hotel">
-      <div class="container col-xxl-8 px-4 py-5 text-light">
+      <div class="container col-xxl-9 px-4 py-5 text-light">
         <div class="row flex-lg-row-reverse align-items-center g-5 py-5 border border-light rounded">
           <div class="col-10 col-sm-8 col-lg-6">
             <img :src="hotel.image" class="d-block mx-lg-auto img-fluid rounded" alt="Bootstrap Themes" width="700" height="500" loading="lazy">
