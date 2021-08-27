@@ -52,7 +52,8 @@ export default {
     '@nuxtjs/auth-next'
   ],
   router:{
-    middleware:['auth']
+    middleware:['auth'],
+    linkActiveClass: 'btn btn-light'
   },
 
   auth:{

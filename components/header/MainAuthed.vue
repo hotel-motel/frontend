@@ -17,6 +17,8 @@
             <img src="https://github.com/mdo.png" alt="mdo" width="32" height="32" class="rounded-circle">
           </a>
           <ul class="dropdown-menu text-small" aria-labelledby="dropdownUser1">
+            <li><nuxt-link to="dashboard" class="dropdown-item">Dashboard</nuxt-link></li>
+            <li><hr class="dropdown-divider"></li>
             <li><a class="dropdown-item" @click="logout">Sign out</a></li>
           </ul>
         </div>
