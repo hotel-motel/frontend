@@ -44,7 +44,6 @@
 </template>
 
 <script>
-//TODO: Show server error
 import Form from '~/helpers/form/form.js';
 import {required, minLength, sameAs, not} from 'vuelidate/lib/validators'
 export default {
