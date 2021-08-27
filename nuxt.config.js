@@ -38,6 +38,7 @@ export default {
     '~/components',
     { path: '~/components/form/', prefix: 'form' },
     { path: '~/components/header/', prefix: 'header' },
+    { path: '~/components/trip/', prefix: 'trip' },
     { path: '~/components/auth/register', prefix: 'register' },
   ],
 
