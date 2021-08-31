@@ -25,7 +25,11 @@
     </div>
     <input class="form-control" type="password" name="password" v-model="form.password">
     <FormErrorMessage :form="form" :name="'password'" v-if="form.errors.has('password')" />
-    <input type="submit" name="send" class="btn btn-warning" :disabled="form.errors.any()" value="Register" />
+    <input type="submit" name="send" class="btn btn-warning" :disabled="form.errors.any()" value="Register" v-if=" ! form.isSending" />
+    <button class="btn btn-warning" type="button" disabled v-else>
+      <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+      <span class="visually-hidden">Loading...</span>
+    </button>
     <div class="row">
       <div class="col text-end">
         <NuxtLink  class="btn btn-outline-light" to="/auth/login">
