@@ -44,7 +44,7 @@
 </template>
 
 <script>
-import Form from '~/helpers/form/form.js';
+import Form from '~/helpers/form/form.js'
 import {required, minLength, sameAs, not} from 'vuelidate/lib/validators'
 export default {
   layout:'dashboard',
