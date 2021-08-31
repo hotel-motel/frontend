@@ -26,8 +26,12 @@
         <FormErrorMessage :form="form" :name="'new_password_confirm'" v-if="form.errors.has('new_password_confirm')" />
       </div>
       <div>
-        <button class="btn btn-primary" @click="changePassword()">
+        <button class="btn btn-primary" @click="changePassword()" v-if=" ! form.isSending">
           Change password
+        </button>
+        <button class="btn btn-primary" type="button" disabled v-else>
+          <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+          <span class="visually-hidden">Loading...</span>
         </button>
       </div>
     </div>
