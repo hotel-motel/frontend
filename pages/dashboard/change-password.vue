@@ -1,40 +1,40 @@
 <template>
   <div class="text-light">
-    <div class="d-flex justify-content-center mt-1 mb-1" v-if="is_loading">
+    <div class="d-flex justify-content-center mt-1 mb-1" v-if="form.isSending">
       <div class="spinner-border" role="status"></div>
     </div>
-    <div class="d-grid gap-3" v-else-if="changed===false">
-      <div class="d-grid gap-2">
-        <span>
-          Old password :
-        </span>
-        <input type="password" class="form-control" v-model="form.old_password">
-        <FormErrorMessage :form="form" :name="'old_password'" v-if="form.errors.has('old_password')" />
+    <form  @submit.prevent="submitForm" @keydown="form.errors.clear($event.target.name)" v-else-if="changed===false">
+      <div class="d-grid gap-3">
+        <div class="d-grid gap-2">
+          <span>
+            Old password :
+          </span>
+          <input type="password" name="old_password" class="form-control" v-model="form.old_password">
+          <FormErrorMessage :form="form" name="old_password" v-if="form.errors.has('old_password')" />
+        </div>
+        <div class="d-grid gap-2">
+          <span>
+            New password :
+          </span>
+          <input type="password" name="new_password" class="form-control" v-model="form.new_password">
+          <FormErrorMessage :form="form" name="new_password" v-if="form.errors.has('new_password')" />
+        </div>
+        <div class="d-grid gap-2">
+          <span>
+            New password again :
+          </span>
+          <input type="password" name="new_password_confirm" class="form-control" v-model="form.new_password_confirm">
+          <FormErrorMessage :form="form" name="new_password_confirm" v-if="form.errors.has('new_password_confirm')" />
+        </div>
+        <div>
+          <input type="submit" class="btn btn-primary" value="Change password" v-if=" ! form.isSending">
+          <button class="btn btn-primary" type="button" disabled v-else>
+            <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+            <span class="visually-hidden">Loading...</span>
+          </button>
+        </div>
       </div>
-      <div class="d-grid gap-2">
-        <span>
-          New password :
-        </span>
-        <input type="password" class="form-control" v-model="form.new_password">
-        <FormErrorMessage :form="form" :name="'new_password'" v-if="form.errors.has('new_password')" />
-      </div>
-      <div class="d-grid gap-2">
-        <span>
-          New password again :
-        </span>
-        <input type="password" class="form-control" v-model="form.new_password_confirm">
-        <FormErrorMessage :form="form" :name="'new_password_confirm'" v-if="form.errors.has('new_password_confirm')" />
-      </div>
-      <div>
-        <button class="btn btn-primary" @click="changePassword()" v-if=" ! form.isSending">
-          Change password
-        </button>
-        <button class="btn btn-primary" type="button" disabled v-else>
-          <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
-          <span class="visually-hidden">Loading...</span>
-        </button>
-      </div>
-    </div>
+    </form>
     <div v-if="changed">
       <div class="alert alert-success">
         Password changed
@@ -63,7 +63,7 @@ export default {
     }
   },
   methods:{
-    changePassword(){
+    submitForm(){
       if (this.form.validated(this.$v)){
         this.form.submit(this.$api, 'change/password')
         .then(response=>this.changed=true)
