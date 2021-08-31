@@ -21,8 +21,8 @@
         </div>
         <input class="form-control" type="password" name="password" v-model="form.password">
         <FormErrorMessage :form="form" :name="'password'" v-if="form.errors.has('password')" />
-        <input v-show=" ! form.isSending" type="submit" name="send" class="btn btn-warning" :disabled="form.errors.any()" value="login">
-        <button v-show="form.isSending" class="btn btn-warning" type="button" disabled>
+        <input type="submit" name="send" class="btn btn-warning" :disabled="form.errors.any()" value="login" v-if=" ! is_loading">
+        <button class="btn btn-warning" type="button" disabled v-else>
           <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
           <span class="visually-hidden">Loading...</span>
         </button>
@@ -51,6 +51,7 @@ export default {
   layout:'empty',
   data(){
     return {
+      is_loading:false,
       form:new Form({
         email:'',
         password:''
@@ -73,12 +74,14 @@ export default {
   methods:{
     submitForm(){
       if (this.form.validated(this.$v)){
+        this.is_loading=true
         this.$auth.loginWith('laravelJWT', {
           data: {
             email: this.form.email,
             password: this.form.password
           }
         }).catch(error=>this.form.onFail(error.response.data.errors))
+        .finally(()=> this.is_loading=false)
       }else{
         this.form.parseError({
           'email':{
