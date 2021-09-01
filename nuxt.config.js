@@ -37,9 +37,10 @@ export default {
   components: [
     '~/components',
     { path: '~/components/form/', prefix: 'form' },
-    { path: '~/components/header/', prefix: 'header' },
     { path: '~/components/trip/', prefix: 'trip' },
+    { path: '~/components/header/', prefix: 'header' },
     { path: '~/components/auth/register', prefix: 'register' },
+    { path: '~/components/auth/reset-password', prefix: 'resetPassword' },
   ],
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
