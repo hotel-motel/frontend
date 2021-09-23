@@ -6,6 +6,6 @@
 
 <script>
 export default {
-
+  middleware: 'operator'
 }
 </script>
