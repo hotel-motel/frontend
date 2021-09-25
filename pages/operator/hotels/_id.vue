@@ -36,6 +36,7 @@
                 <th scope="col">Capacity</th>
                 <th scope="col">Floor</th>
                 <th scope="col">Status</th>
+                <th scope="col">Reserved Until</th>
                 <th scope="col">Details</th>
               </tr>
               </thead>
@@ -50,7 +51,16 @@
                   </button>
                 </td>
                 <td>
-                  <nuxt-link class="btn btn-warning" :to="'/operator/hotels/'+hotel.id+'/rooms/'+room.id">
+                  <div v-if="room.trips.length>0">
+                    <div v-for="trip in room.trips">
+                      <div class="text-warning"  v-if="isActiveTrip(trip)" disabled>
+                        {{ trip.end }}
+                      </div>
+                    </div>
+                  </div>
+                </td>
+                <td>
+                  <nuxt-link class="btn btn-outline-secondary" :to="'/operator/hotels/'+hotel.id+'/rooms/'+room.id">
                     Details
                   </nuxt-link>
                 </td>
@@ -65,6 +75,7 @@
 </template>
 
 <script>
+let moment = require('moment');
 export default {
   middleware: 'operator',
   data(){
@@ -77,6 +88,11 @@ export default {
       this.$api.get('/operator/hotels/'+this.$route.params.id)
         .then(response => this.hotel=response.data)
     })
+  },
+  methods:{
+    isActiveTrip(trip){
+      return moment().isBetween(trip.start, trip.end)
+    }
   }
 }
 </script>
