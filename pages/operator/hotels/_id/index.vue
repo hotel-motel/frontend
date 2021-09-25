@@ -25,10 +25,16 @@
       <div class="py-12" v-if="hotel.rooms!=null">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
           <div class="grid gap-2">
-          <span class="h3">
-            <i class='bx bx-list-ul'></i>
-            Rooms list :
-          </span>
+            <div class="d-flex justify-content-between">
+              <span class="h3">
+                  <i class='bx bx-list-ul'></i>
+                  Rooms list :
+                </span>
+              <nuxt-link :to="'/operator/hotels/'+hotel.id+'/new/room'" class="btn btn-success">
+                <i class='bx bx-plus'></i>
+                new Room
+              </nuxt-link>
+            </div>
             <table class="table table-hover table-dark">
               <thead>
               <tr>
