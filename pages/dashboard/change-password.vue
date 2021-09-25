@@ -35,7 +35,7 @@
         </div>
       </div>
     </form>
-    <div v-if="changed">
+    <div v-else>
       <div class="alert alert-success">
         Password changed
       </div>

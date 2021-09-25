@@ -3,7 +3,7 @@
     <div class="d-flex justify-content-center mt-1 mb-1" v-if="form.isSending">
       <div class="spinner-border" role="status"></div>
     </div>
-    <form  @submit.prevent="submitForm" @keydown="form.errors.clear($event.target.name)" v-else>
+    <form  @submit.prevent="submitForm" @keydown="form.errors.clear($event.target.name)" v-else-if="changed===false">
       <div class="d-grid gap-3">
         <div class="d-grid gap-2">
           <span>
@@ -42,6 +42,17 @@
         </div>
       </div>
     </form>
+    <div v-else>
+      <div class="alert alert-success d-flex justify-content-between">
+        <span>
+          Room Added
+        </span>
+        <nuxt-link class="btn btn-warning" :to="'/operator/hotels/'+$route.params.id+'/rooms/'+room.id">
+          Room Detail
+        </nuxt-link>
+      </div>
+
+    </div>
   </div>
 </template>
 <script>
@@ -55,15 +66,18 @@ export default {
         price:0,
         floor:0,
         capacity:0
-      })
+      }),
+      changed:false,
+      room:null
     }
   },
   methods:{
     submitForm(){
       if (this.form.validated(this.$v)){
         this.form.submit(this.$api, '/operator/hotels/'+this.$route.params.id+'/rooms')
-          .then(response=> {
-            //TODO: show success message and redirect to room page
+          .then(response=>{
+            this.changed=true
+            this.room=response
           })
       }else{
         this.form.parseError({
