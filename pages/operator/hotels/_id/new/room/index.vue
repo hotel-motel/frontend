@@ -34,7 +34,7 @@
           <FormErrorMessage :form="form" name="capacity" v-if="form.errors.has('capacity')" />
         </div>
         <div>
-          <input type="submit" class="btn btn-primary" value="Change password" v-if=" ! form.isSending">
+          <input type="submit" class="btn btn-primary" value="Create" v-if=" ! form.isSending">
           <button class="btn btn-primary" type="button" disabled v-else>
             <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
             <span class="visually-hidden">Loading...</span>
