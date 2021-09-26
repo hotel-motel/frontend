@@ -26,7 +26,7 @@
           <input type="password" name="new_password_confirm" class="form-control" v-model="form.new_password_confirm">
           <FormErrorMessage :form="form" name="new_password_confirm" v-if="form.errors.has('new_password_confirm')" />
         </div>
-        <div>
+        <div class="d-grid">
           <input type="submit" class="btn btn-primary" value="Change password" v-if=" ! form.isSending">
           <button class="btn btn-primary" type="button" disabled v-else>
             <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>

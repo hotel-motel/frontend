@@ -33,7 +33,7 @@
           <input type="number" name="capacity" class="form-control" v-model="form.capacity">
           <FormErrorMessage :form="form" name="capacity" v-if="form.errors.has('capacity')" />
         </div>
-        <div>
+        <div class="d-grid">
           <input type="submit" class="btn btn-primary" value="Create" v-if=" ! form.isSending">
           <button class="btn btn-primary" type="button" disabled v-else>
             <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
@@ -51,7 +51,6 @@
           Room Detail
         </nuxt-link>
       </div>
-
     </div>
   </div>
 </template>
