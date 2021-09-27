@@ -1,26 +1,34 @@
 <template>
   <div>
-    <a href="#deleteRoom">
-      <div class="alert alert-danger" data-bs-toggle="collapse" href="#deleteRoom"  aria-expanded="false" aria-controls="deleteRoom">
-        <i class='bx bxs-trash'></i>
-        Delete Room
-      </div>
-    </a>
-    <div class="collapse mb-3" id="deleteRoom">
-      <div class="border border-danger rounded">
-        <div class="m-4">
-          <div class="d-flex justify-content-between">
-            <div>
-              <p>
-                Are you sure to delete room? with this action you delete room for ever!
-                Trips reserved until now still valid ! (for cancel reserved trips call support)
-              </p>
+    <div v-if=" ! room.deleted_at">
+      <a href="#deleteRoom">
+        <div class="alert alert-danger" data-bs-toggle="collapse" href="#deleteRoom"  aria-expanded="false" aria-controls="deleteRoom">
+          <i class='bx bxs-trash'></i>
+          Delete Room
+        </div>
+      </a>
+      <div class="collapse mb-3" id="deleteRoom">
+        <div class="border border-danger rounded">
+          <div class="m-4">
+            <div class="d-flex justify-content-between">
+              <div>
+                <p>
+                  Are you sure to delete room? with this action you delete room for ever!
+                  Trips reserved until now still valid ! (for cancel reserved trips call support)
+                </p>
+              </div>
+              <button class="btn btn-danger" @click="deleteRoom()">
+                Delete
+              </button>
             </div>
-            <button class="btn btn-danger" @click="deleteRoom()">
-              Delete
-            </button>
           </div>
         </div>
+      </div>
+    </div>
+    <div v-else>
+      <div class="alert alert-danger">
+        <i class='bx bxs-trash'></i>
+        Room has been deleted
       </div>
     </div>
   </div>

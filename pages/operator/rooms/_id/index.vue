@@ -39,9 +39,9 @@
           </div>
         </div>
       </div>
-    </div>
-    <div class="row mt-3">
-      <RoomDelete :room="room" />
+      <div class="row mt-3">
+        <RoomDelete :room="room" />
+      </div>
     </div>
   </div>
 </template>

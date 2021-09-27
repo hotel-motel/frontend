@@ -43,6 +43,7 @@
                 <th scope="col">Floor</th>
                 <th scope="col">Status</th>
                 <th scope="col">Reserved Until</th>
+                <th scope="col">Delete status</th>
                 <th scope="col">Details</th>
               </tr>
               </thead>
@@ -64,6 +65,11 @@
                       </div>
                     </div>
                   </div>
+                </td>
+                <td>
+                  <button class="btn btn-danger" :to="'/operator/rooms/'+room.id" v-if="room.deleted_at" disabled>
+                    deleted
+                  </button>
                 </td>
                 <td>
                   <nuxt-link class="btn btn-outline-secondary" :to="'/operator/rooms/'+room.id">
@@ -102,7 +108,7 @@ export default {
   },
   head(){
     return{
-      title:'Add hotel'
+      title:'Hotel info'
     }
   }
 }
