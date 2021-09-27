@@ -32,7 +32,7 @@
             <div class="d-grid">
               <span class="alert alert-secondary">
                 <i class='bx bx-history' ></i>
-                Trips history
+                Trips List
               </span>
               <RoomTrips :trips="room.trips" />
             </div>

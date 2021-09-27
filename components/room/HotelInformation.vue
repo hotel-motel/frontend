@@ -1,5 +1,5 @@
 <template>
-  <div class="align-items-center border border-primary rounded">
+  <div class="border border-primary rounded">
     <div class="d-grid gap-2 m-4">
         <span>
           {{hotel.name}}
