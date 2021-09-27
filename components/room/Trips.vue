@@ -22,7 +22,7 @@
         </a>
         <div class="collapse" :id="'trip'+trip.id">
           <div class="align-items-center border border-light rounded">
-            <div class="d-grid gap-2 m-3">
+            <div class="d-grid gap-3 m-3">
               <span>
                 Amount : {{ trip.amount }}
                 <span class="badge badge-warning text-warning">

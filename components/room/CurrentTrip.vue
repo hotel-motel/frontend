@@ -1,5 +1,5 @@
 <template>
-  <div class="align-items-center border border-success rounded">
+  <div class="border border-success rounded">
     <div class="d-grid gap-2 m-4" v-if="trip">
       <span>
         <i class='bx bx-down-arrow-alt'></i>
