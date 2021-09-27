@@ -27,6 +27,12 @@ export default {
       this.$api.get('/operator/hotels')
         .then(response => this.hotels=response.data)
     })
+  },
+  head(){
+    //TODO: add title to other pages too
+    return{
+      title:'Operator Dashboard'
+    }
   }
 }
 </script>
