@@ -108,7 +108,7 @@ export default{
       this.is_loading=true
       // Note : we make is_loading false in catch only because we need still loading while redirection to payment page
       this.form.submit(this.$api, '/rooms/'+this.room_id+'/trips')
-        .then(response=> window.location.href='http://127.0.0.1:8000/trips/'+response.data+'/pay')
+        .then(response=> window.location.href='http://127.0.0.1:8000/trips/'+response+'/pay')
         .catch(error=> {
           this.is_loading=false
         })
