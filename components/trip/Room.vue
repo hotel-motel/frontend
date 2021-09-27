@@ -22,7 +22,7 @@
             {{ room.price }}
             <span class="badge badge-warning text-warning">
                 Tooman
-              </span>
+            </span>
             (per day)
           </p>
           <h6 class="display-6 fw-bold lh-1 mb-3 alert alert-primary">
