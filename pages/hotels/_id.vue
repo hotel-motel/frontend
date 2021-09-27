@@ -43,7 +43,7 @@ export default {
   },
   head(){
     return{
-      title:'Hotel'
+      title:'Hotel info'
     }
   }
 }
