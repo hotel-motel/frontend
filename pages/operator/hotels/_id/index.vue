@@ -66,7 +66,7 @@
                   </div>
                 </td>
                 <td>
-                  <nuxt-link class="btn btn-outline-secondary" :to="'/operator/hotels/'+hotel.id+'/rooms/'+room.id">
+                  <nuxt-link class="btn btn-outline-secondary" :to="'/operator/rooms/'+room.id">
                     Details
                   </nuxt-link>
                 </td>

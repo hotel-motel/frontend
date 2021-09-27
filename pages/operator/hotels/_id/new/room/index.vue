@@ -47,7 +47,7 @@
         <span>
           Room Added
         </span>
-        <nuxt-link class="btn btn-warning" :to="'/operator/hotels/'+$route.params.id+'/rooms/'+room.id">
+        <nuxt-link class="btn btn-warning" :to="'/operator/rooms/'+room.id">
           Room Detail
         </nuxt-link>
       </div>
