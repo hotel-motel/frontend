@@ -14,7 +14,6 @@
 <script>
 export default {
   auth:false,
-  props:['city_name'],
   data(){
     return{
       hotels:null,
@@ -49,6 +48,11 @@ export default {
         .finally(()=>{
           this.is_loading=false
         })
+    }
+  },
+  head(){
+    return{
+      title:this.$route.params.name
     }
   }
 }

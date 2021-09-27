@@ -29,7 +29,6 @@ export default {
     })
   },
   head(){
-    //TODO: add title to other pages too
     return{
       title:'Operator Dashboard'
     }

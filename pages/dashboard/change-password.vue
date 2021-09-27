@@ -103,6 +103,11 @@ export default {
         sameAsNewPassword:sameAs('new_password')
       }
     }
+  },
+  head(){
+    return{
+      title:'Change password'
+    }
   }
 }
 </script>

@@ -19,6 +19,11 @@ export default {
     registered(){
       this.userRegistered=true
     }
+  },
+  head(){
+    return{
+      title:'Register'
+    }
   }
 }
 </script>

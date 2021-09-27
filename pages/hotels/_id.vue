@@ -40,6 +40,11 @@ export default {
       this.$api.get('/hotels/'+this.$route.params.id)
       .then(response => this.hotel=response.data)
     })
+  },
+  head(){
+    return{
+      title:'Hotel'
+    }
   }
 }
 </script>

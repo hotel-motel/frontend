@@ -49,6 +49,11 @@ export default {
     passwordReseted(){
       this.state=this.states.RESETED;
     }
+  },
+  head(){
+    return{
+      title:'Reset password'
+    }
   }
 };
 </script>

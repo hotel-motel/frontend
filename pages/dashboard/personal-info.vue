@@ -65,6 +65,11 @@ export default {
     getJoinedAt(){
       return moment(this.user.created_at).format('DD-MMM-YYYY')
     }
+  },
+  head(){
+    return{
+      title:'Personal info'
+    }
   }
 }
 </script>

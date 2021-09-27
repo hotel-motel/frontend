@@ -99,6 +99,11 @@ export default {
     isActiveTrip(trip){
       return moment().isBetween(trip.start, trip.end)
     }
+  },
+  head(){
+    return{
+      title:'Add hotel'
+    }
   }
 }
 </script>

@@ -23,6 +23,11 @@ export default {
       this.$api.get('/trips/'+this.$route.params.id)
         .then(response=>this.trip=response.data)
     })
+  },
+  head(){
+    return{
+      title:'Trip info'
+    }
   }
 }
 </script>

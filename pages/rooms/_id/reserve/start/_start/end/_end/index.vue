@@ -82,6 +82,11 @@ export default {
       })
       .then(response=>this.room=response.data)
     })
+  },
+  head(){
+    return{
+      title:'Reserve room'
+    }
   }
 }
 </script>

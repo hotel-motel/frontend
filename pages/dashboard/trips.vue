@@ -58,6 +58,11 @@ export default {
     this.$api.get('/trips')
       .then(response=>this.trips=response.data)
       .finally(()=>{ this.is_loading=false })
+  },
+  head(){
+    return{
+      title:'Trips'
+    }
   }
 }
 </script>

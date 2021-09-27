@@ -96,10 +96,11 @@ export default {
         }, this.$v);
       }
     }
+  },
+  head(){
+    return{
+      title:'Login'
+    }
   }
 }
 </script>
-
-<style scoped>
-
-</style>

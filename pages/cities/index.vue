@@ -24,6 +24,11 @@ export default {
       this.$api.$get('/cities')
       .then(response=>this.cities=response)
     })
+  },
+  head(){
+    return{
+      title:'Cities'
+    }
   }
 }
 </script>

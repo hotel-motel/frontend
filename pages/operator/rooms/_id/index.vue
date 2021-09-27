@@ -56,6 +56,11 @@ export default {
         .then(response => this.room=response.data)
     })
   },
+  head(){
+    return{
+      title:'Room info'
+    }
+  }
 }
 </script>
 
