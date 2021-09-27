@@ -1,7 +1,7 @@
 <template>
   <div class="d-grid gap-3 container">
     <span class="h3 text-light">
-      Hotels which have access :
+      Your hotels :
     </span>
     <div class="row justify-around">
       <div class="col-3 text-light" v-for="hotel in hotels">
