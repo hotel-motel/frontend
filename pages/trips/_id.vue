@@ -2,10 +2,10 @@
   <div class="container text-light">
     <div v-if="trip">
       <div class="d-grid gap-3 mt-4 mb-4">
-        <trip-information :trip="trip"></trip-information>
-        <trip-passengers :passengers="trip.passengers"></trip-passengers>
-        <trip-payment :trip="trip"></trip-payment>
-        <trip-room :room="trip.room"></trip-room>
+        <TripInformation :trip="trip" />
+        <TripPassengers :passengers="trip.passengers" />
+        <TripPayment :trip="trip" />
+        <TripRoom :room="trip.room" />
       </div>
     </div>
   </div>
