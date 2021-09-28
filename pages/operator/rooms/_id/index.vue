@@ -40,6 +40,9 @@
         </div>
       </div>
       <div class="row mt-3">
+        <RoomEdit :room="room" />
+      </div>
+      <div class="row mt-3">
         <RoomDelete :room="room" />
       </div>
     </div>

@@ -14,7 +14,7 @@
               <div>
                 <p>
                   Are you sure to delete room? with this action you delete room for ever!
-                  Trips reserved until now still valid ! (for cancel reserved trips call support)
+                  Trips reserved until now still valid !
                 </p>
               </div>
               <button class="btn btn-danger" @click="deleteRoom()">
