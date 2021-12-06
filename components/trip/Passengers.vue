@@ -1,10 +1,8 @@
 <template>
   <div class="d-grid gap-2">
-    <span class="h4">
-        <div class="badge badge-primary">
-            Passengers list
-        </div>
-    </span>
+    <h6 class="display-6 fw-bold lh-1 mb-3 alert alert-primary">
+      Passengers list
+    </h6>
     <table class="table table-dark">
       <thead>
       <tr>
