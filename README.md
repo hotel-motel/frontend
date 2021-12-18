@@ -1,36 +1,22 @@
 <p align="center">
-  <a href="https://getbootstrap.com/">
-    <img src="https://user-images.githubusercontent.com/30191548/135165218-05c4655c-81e1-4ae5-896e-41cabfd1e7f2.jpg" alt="Bootstrap logo" width="240" height="240">
-  </a>
+    <kbd>
+        <img src="https://user-images.githubusercontent.com/30191548/135165218-05c4655c-81e1-4ae5-896e-41cabfd1e7f2.jpg" alt="Hotel Motel logo" width="240" height="240">
+    </kbd>
 </p>
-<h3 align="center">Hotel Motel</h3>
+<h3 align="center">Hotel Motel front-end</h3>
 <p align="center">
-  This project is client-side of a hotel reservation project.
+    Client-side of a hotel reservation application.
 </p>
 
-# project structure
+## Documentation
 
-- ## Tools used
-<ul> 
-    <li><a href="https://vuejs.org">vue js</a> for client-side implementation.</li>
-    <li><a href="https://nuxtjs.org/">nuxt js</a> for client-side implementation.</li>
-    <li><a href="https://boxicons.com">boxicons</a> for icons.</li>
-    <li><a href="https://getbootstrap.com">bootstrap</a> for style pages.</li>
-</ul>
+Please refer to our extensive [Wiki documentation](https://github.com/hotel-motel/frontend/wiki) for more information.
 
-## Build Setup
+## Security Vulnerabilities
 
-```bash
-# install dependencies
-$ npm install
+If you discover a security vulnerability within this project, please send an e-mail to Omid Reza Heidari via [omid77.orh@gmail.com](mailto:omid77.orh@gmail.com). All security vulnerabilities will be promptly addressed.
 
-# serve with hot reload at localhost:3000
-$ npm run dev
 
-# build for production and launch server
-$ npm run build
-$ npm run start
+## License
 
-# generate static project
-$ npm run generate
-```
+This HotelMotel is licensed under the [MIT](https://opensource.org/licenses/MIT).
